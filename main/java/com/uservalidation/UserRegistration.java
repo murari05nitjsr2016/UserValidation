@@ -25,6 +25,20 @@ public class UserRegistration {
 
         };
         vFname.Validation("Murari");
+        Validation vLname =(lName) ->{
+            Pattern pattern = Pattern.compile("^[A-Z][a-zA-Z]{3,}$");
+            Matcher matcher = pattern.matcher(lName);
+            boolean matchFound = matcher.find();
+            if(matchFound)
+            {
+                System.out.println("Last Name Is Valid");
+            }
+            else {
+                System.out.println("First Name Is Not Valid");
+            }
+
+        };
+        vLname.Validation("Kumar");
     }
 
 }
