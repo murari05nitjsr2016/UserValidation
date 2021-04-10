@@ -65,6 +65,20 @@ public class UserRegistration {
             }
         };
         mobNoValidation.Validation("8709628464");
+        Validation pwd1Validation=(pwd)-> {
+            String regex = "[A-Z0-9a-z$%&*@!#]{8,}";
+            Pattern pattern = Pattern.compile(regex);
+            Matcher matcher = pattern.matcher(pwd);
+            boolean matchFound = matcher.find();
+            if (matchFound) {
+                System.out.println("Valid password");
+            } else {
+                System.out.println("Invalid password");
+            }
+        };
+        pwd1Validation.Validation("jhg012@3#");
+
+
 
     }
 }
