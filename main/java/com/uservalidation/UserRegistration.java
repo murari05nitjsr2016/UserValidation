@@ -13,7 +13,7 @@ public class UserRegistration {
     public static void main(String[] args) {
 
         System.out.println("Welcome to user Registration prog");
-        Validation vFname =(fName) ->{
+     /*   Validation vFname =(fName) ->{
             Pattern pattern = Pattern.compile("^[A-Z][a-zA-Z]{3,}$");
             Matcher matcher = pattern.matcher(fName);
             boolean matchFound = matcher.find();
@@ -42,6 +42,21 @@ public class UserRegistration {
         };
         vLname.Validation("Kumar");
 
+      */
+Validation emailValidation =(email)->{
+            String regex = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@" + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+            Pattern pattern = Pattern.compile(regex);
+            Matcher matcher = pattern.matcher(email);
+            boolean matchFound = matcher.find();
+            if(matchFound)
+            {
+                System.out.println("Valid email");
+            }
+            else {
+                System.out.println("Invalid email");
+            }
+        };
+        emailValidation.Validation("murario5nitJsr2016@gmail.com");
 
     }
 
