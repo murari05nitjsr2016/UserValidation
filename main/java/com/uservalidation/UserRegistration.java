@@ -70,13 +70,21 @@ public class UserRegistration {
             Pattern pattern = Pattern.compile(regex);
             Matcher matcher = pattern.matcher(pwd);
             boolean matchFound = matcher.find();
-            if (matchFound) {
-                System.out.println("Valid password");
-            } else {
-                System.out.println("Invalid password");
+            try {
+                if (matchFound) {
+                    System.out.println("Valid password");
+                } else {
+                    throw new InvalidPattern("invalid Password");
+                }
             }
+            catch(InvalidPattern e)
+                {
+                 System.out .println(e.getMessage());
+                }
         };
-        pwd1Validation.Validation("jhg012@3#");
+        pwd1Validation.Validation("jh");
+
+
 
 
 
