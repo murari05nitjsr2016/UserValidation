@@ -6,10 +6,12 @@ import java.util.regex.Pattern;
 @FunctionalInterface
 interface Validation{
     public abstract void Validation(String input);
+  // public abstract void Validation1(String input);
 
 }
 public class UserRegistration {
     public static void main(String[] args) {
+
         System.out.println("Welcome to user Registration prog");
         Validation vFname =(fName) ->{
             Pattern pattern = Pattern.compile("^[A-Z][a-zA-Z]{3,}$");
@@ -34,11 +36,13 @@ public class UserRegistration {
                 System.out.println("Last Name Is Valid");
             }
             else {
-                System.out.println("First Name Is Not Valid");
+                System.out.println("Last Name Is Not Valid");
             }
 
         };
         vLname.Validation("Kumar");
+
+
     }
 
 }
